@@ -1,60 +1,51 @@
 <template>
   <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
-
-    <v-content>
-      <HelloWorld/>
-    </v-content>
+    <v-card>
+      <v-layout>
+        <v-flex xs12>
+          <v-toolbar dark>
+            <v-toolbar-title class="headline text-uppercase">
+                <span>Ocean's</span>
+            </v-toolbar-title>
+            <v-spacer></v-spacer>
+              <v-btn to="/" x-small>Home</v-btn>
+              <v-menu open-on-hover bottom offset-y>
+                <template v-slot:activator="{ on }">
+                  <v-btn x-small v-on="on">Search▼</v-btn>
+                </template>
+                <v-list>
+                  <v-list-item
+                    v-for="(item, index) in items"
+                    :key="index" text
+                  >
+                    <v-list-item-title>{{ item.title }}</v-list-item-title>
+                  </v-list-item>
+                </v-list>
+              </v-menu>
+              <v-btn to="/" x-small>About</v-btn>
+              <v-btn to="/" x-small>MyPage</v-btn>
+          </v-toolbar>
+        </v-flex>
+      </v-layout>
+    </v-card>
+    <workList/>
+    <router-view></router-view>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
-
+import workList from '@/views/workList.vue';
 export default {
   name: 'App',
-
   components: {
-    HelloWorld,
+    workList
   },
-
   data: () => ({
-    //
-  }),
+    items: [
+      { title: 'Art' },
+      { title: 'Artist' },
+      { title: 'Place' }
+    ]
+  })
 };
 </script>
