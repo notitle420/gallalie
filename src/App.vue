@@ -28,18 +28,13 @@
         </v-flex>
       </v-layout>
     </v-card>
-    <workList/>
     <router-view></router-view>
   </v-app>
 </template>
 
 <script>
-import workList from '@/views/workList.vue';
 export default {
   name: 'App',
-  components: {
-    workList
-  },
   data: () => ({
     items: [
       { title: 'Art' },
