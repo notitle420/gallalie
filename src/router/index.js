@@ -5,6 +5,7 @@ import workAdd from '@/components/workAdd.vue';
 import workDetail from '@/components/workDetail';
 import login from '@/views/login.vue';
 import myPage from '@/components/myPage.vue';
+import artistShow from '@/components/artistShow.vue';
 
 Vue.use(VueRouter)
 
@@ -28,7 +29,11 @@ const routes = [
   {
     path: '/my-page',
     component: myPage
-  }
+  },
+  {
+    path: '/artist-show',
+    component: artistShow
+  },
 ]
 
 const router = new VueRouter({
