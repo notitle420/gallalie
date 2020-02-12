@@ -4,10 +4,10 @@
       <v-layout wrap>
         <v-flex row>
           <v-img
-            width="50px"
-            height="100px"
+            width="100px"
+            height="150px"
             class="ml-8 mt-4">
-            画像をいれるああ<br>あ<br>あ
+            画像をいれるあ<br>あ<br>あ<br>あ<br>あ
           </v-img>
           <v-flex column class="ml-12">
             <p class="mt-4">mitsuhashi tomiko</p>

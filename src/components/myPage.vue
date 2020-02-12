@@ -4,15 +4,15 @@
       <v-layout wrap>
         <v-flex row>
           <v-img
-            width="50px"
-            height="100px"
+            width="100px"
+            height="150px"
             class="ml-8 mt-4">
             画像をいれるああ<br>あ<br>あ
           </v-img>
           <v-flex column class="ml-12">
             <v-flex row>
-              <v-btn outlined x-small width="100px">プロフィールを編集</v-btn>
-              <v-btn outlined x-small width="100px" class="ml-2" to="/work-add">作品を追加</v-btn>
+              <v-btn outlined x-small width="100px" to="/my-page-edit">プロフィールを編集</v-btn>
+              <v-btn outlined x-small width="60px" class="ml-2" to="/work-add">作品を追加</v-btn>
             </v-flex>
             <p class="mt-4">mitsuhashi tomiko</p>
             <p>@油絵ペインター</p>
@@ -26,12 +26,12 @@
     </v-container>
     <v-container fluid>
       <v-layout wrap>
-        <v-text-field disabled label="年齢" full-width/>
-        <v-text-field disabled label="自己紹介" full-width/>
-        <v-text-field disabled label="好きなコンセプト" full-width/>
-        <v-text-field disabled label="経歴" full-width/>
-        <v-text-field disabled label="SNS/連絡先" full-width/>
-        <v-text-field disabled label="作品数" full-width/>
+        <v-text-field label="年齢" full-width/>
+        <v-text-field label="自己紹介" full-width/>
+        <v-text-field label="好きなコンセプト" full-width/>
+        <v-text-field label="経歴" full-width/>
+        <v-text-field label="SNS/連絡先" full-width/>
+        <v-text-field label="作品数" full-width/>
       </v-layout>
     </v-container>
     <v-container>

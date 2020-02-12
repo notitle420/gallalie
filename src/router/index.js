@@ -5,6 +5,7 @@ import workAdd from '@/components/workAdd.vue';
 import workDetail from '@/components/workDetail';
 import login from '@/views/login.vue';
 import myPage from '@/components/myPage.vue';
+import myPageEdit from '@/components/myPageEdit.vue';
 import artistShow from '@/components/artistShow.vue';
 
 Vue.use(VueRouter)
@@ -29,6 +30,10 @@ const routes = [
   {
     path: '/my-page',
     component: myPage
+  },
+  {
+    path: '/my-page-edit',
+    component: myPageEdit
   },
   {
     path: '/artist-show',
