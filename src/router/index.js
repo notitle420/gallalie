@@ -4,6 +4,7 @@ import workList from '@/views/workList.vue';
 import workAdd from '@/components/workAdd.vue';
 import workDetail from '@/components/workDetail';
 import login from '@/views/login.vue';
+import myPage from '@/components/myPage.vue';
 
 Vue.use(VueRouter)
 
@@ -24,6 +25,10 @@ const routes = [
     path: '/login',
     component: login
   },
+  {
+    path: '/my-page',
+    component: myPage
+  }
 ]
 
 const router = new VueRouter({
