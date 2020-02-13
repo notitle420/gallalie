@@ -1,12 +1,13 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import workList from '@/views/workList.vue';
-import workAdd from '@/components/workAdd.vue';
-import workDetail from '@/components/workDetail';
+import workAdd from '@/views/workAdd.vue';
+import workDetail from '@/views/workDetail';
 import login from '@/views/login.vue';
-import myPage from '@/components/myPage.vue';
-import myPageEdit from '@/components/myPageEdit.vue';
-import artistShow from '@/components/artistShow.vue';
+import myPage from '@/views/myPage.vue';
+import myPageEdit from '@/views/myPageEdit.vue';
+import artistShow from '@/views/artistShow.vue';
+import artistCardList from '@/views/artistCardList.vue';
 
 Vue.use(VueRouter)
 
@@ -39,6 +40,10 @@ const routes = [
     path: '/artist-show',
     component: artistShow
   },
+  {
+    path: '/artist-card-list',
+    component: artistCardList
+  }
 ]
 
 const router = new VueRouter({
