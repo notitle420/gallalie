@@ -14,8 +14,8 @@
         </v-flex>
       </v-flex>
     </v-layout>
-    <v-layout>
-      <artistCard/>
+    <v-layout wrap>
+      <artistCard v-for="(artist, i) in artists" :key="i" :artist="artist"/>
     </v-layout>
   </v-container>
 </template>
@@ -24,6 +24,11 @@ import artistCard from '@/components/artistCard.vue';
 export default {
   components: {
     artistCard
+  },
+  computed: {
+    artists() {
+      return this.$store.getters.artists
+    }
   }
 }
 </script>
