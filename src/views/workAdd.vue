@@ -2,6 +2,7 @@
   <div>
     <v-container>
       <uploadImage/>
+      //画像のアップロード部分をコンポーネントにして分離
       <v-layout justify-center wrap>
         <v-text-field full-width placeholder="タイトル" :rules="titleRules" required></v-text-field>
         <v-text-field full-width placeholder="テーマ" :rules="themeRules" required></v-text-field>
