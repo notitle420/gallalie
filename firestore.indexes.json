@@ -1,0 +1,15 @@
+{
+  "indexes": [{
+    "collectionId": "Post",
+    "state": "READY",
+    "fields": [{
+        "fieldPath": "show",
+        "mode": "ASCENDING"
+      },
+      {
+        "fieldPath": "date",
+        "mode": "DESCENDING"
+      }
+    ]
+  }]
+}
