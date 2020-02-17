@@ -3,7 +3,7 @@
     <v-container>
       <uploadImage/>
       <!-- 画像のアップロード部分をコンポーネントにして分離 -->
-      <v-layout justify-center wrap>
+      <v-layout justify-center wrap class="mt-12">
         <v-text-field full-width placeholder="タイトル" :rules="titleRules" required></v-text-field>
         <v-text-field full-width placeholder="テーマ" :rules="themeRules" required></v-text-field>
         <v-text-field full-width placeholder="説明" :rules="discriptionRules" required></v-text-field>
