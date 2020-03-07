@@ -10,7 +10,7 @@
             画像をいれるああ<br>あ<br>あ
           </v-img>
           <v-flex column class="ml-12">
-              <v-btn outlined x-small width="100px">更新を完了する</v-btn>
+              <v-btn outlined x-small width="100px" to="/my-page">更新を完了する</v-btn>
             <p class="mt-4">mitsuhashi tomiko</p>
             <p>@油絵ペインター</p>
             <v-flex row>

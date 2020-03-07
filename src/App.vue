@@ -18,12 +18,12 @@
                     v-for="(item, index) in items"
                     :key="index" text
                   >
-                    <v-list-item-title>{{ item.title }}</v-list-item-title>
+                    <v-btn text :to="'/' + item.url">{{ item.title }}</v-btn>
                   </v-list-item>
                 </v-list>
               </v-menu>
               <v-btn to="/" x-small>About</v-btn>
-              <v-btn to="/" x-small>MyPage</v-btn>
+              <v-btn to="/my-page" x-small>MyPage</v-btn>
           </v-toolbar>
         </v-flex>
       </v-layout>
@@ -37,8 +37,8 @@ export default {
   name: 'App',
   data: () => ({
     items: [
-      { title: 'Art' },
-      { title: 'Artist' },
+      { title: 'Art', url: '' },
+      { title: 'Artist', url: 'artist-card-list' },
       { title: 'Place' }
     ]
   })
