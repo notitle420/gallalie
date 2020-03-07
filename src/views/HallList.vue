@@ -17,7 +17,7 @@ export default {
 
 //レイアウト用のマジックグリッドはここに記述？
 let magicGrid = new MagicGrid({
-  container: ".container",
+  container: "#container",
   animate: true,
   gutter: 30,
   static: true,
