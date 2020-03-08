@@ -12,9 +12,9 @@
 export default {
   props: [
     //各データはどう用意する？
-    hallImage,
-    hallTitle,
-    ownerName
+    "hallImage",
+    "hallTitle",
+    "ownerName"
   ]
 };
 </script>
