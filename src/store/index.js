@@ -44,17 +44,10 @@ export default new Vuex.Store({
         view: 2500,
         numberofworks: 95
       },
-
-    ]
-  },
-  mutations: {
-    addWork(state, payload) {
-      payload.id = state.nextId
-      state.works.push(payload)
-      state.nextId++
-    },
-  },
-  actions: {
+    ],
+    userStatus: {
+      loggedIn: false,
+    }
   },
   getters: {
     works(state) {
@@ -80,6 +73,27 @@ export default new Vuex.Store({
         }
         console.error('artist not found')
       }
+    },
+    userStatus(state) {
+      return state.userStatus
     }
-  }
+  },
+  mutations: {
+    addWork(state, payload) {
+      payload.id = state.nextId
+      state.works.push(payload)
+      state.nextId++
+    },
+    setLoggedIn(state, value) {
+      state.userStatus.loggedIn = value;
+    },
+    setUser(state, data) {
+      state.userStatus.data = data;
+    }
+  },
+  actions: {
+    fetchUser({ commit }, userStatus) {
+      commit('setLoggedIn', userStatus !== null);
+    }
+  },
 })

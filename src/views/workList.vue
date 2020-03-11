@@ -1,10 +1,10 @@
 <template>
-  <div class="work">
+  <div class='work'>
     <v-container>
       <v-layout wrap>
-        <v-flex sm12 md6 xs6 v-for="(work, i) in works" :key="i" name>
-          <v-card width="180" height="600" class="mx-2 mb-4">
-            <v-img width="180" height="150">画像入れる</v-img>
+        <v-flex sm12 md6 xs6 v-for='(work, i) in works' :key='i' name>
+          <v-card width='180' height='600' class='mx-2 mb-4'>
+            <v-img width='180' height='150'>画像入れる</v-img>
             <v-card-title>{{ work.title }}</v-card-title>
             <v-divider/>
             <v-card-subtitle>朝ごはん</v-card-subtitle>
@@ -17,7 +17,7 @@
             <v-divider/>
             <span>
               <v-layout>
-                <v-img width="40" height="40"></v-img>
+                <v-img width='40' height='40'></v-img>
                   <v-card-text>asagohandaisuki</v-card-text>
               </v-layout>
             </span>
@@ -26,8 +26,8 @@
         </v-flex>
       </v-layout>
     </v-container>
-      <v-layout justify-center class="mt-10">
-        <v-btn to="/work-add" x-large color="white">Add</v-btn>
+      <v-layout justify-center class='mt-10'>
+        <v-btn to='/work-add' x-large color='white'>Add</v-btn>
       </v-layout>
   </div>
 </template>
