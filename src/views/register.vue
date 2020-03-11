@@ -63,7 +63,7 @@ export default {
           data.password = '';
           this.$router.push('/');
         })
-        .catch(() => { console.log('失敗')});
+        .catch(() => {});
         //成功したらホームにリダイレクト
     }
   }
