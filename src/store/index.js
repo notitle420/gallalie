@@ -2,7 +2,6 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 Vue.use(Vuex)
-
 export default new Vuex.Store({
   state: {
     works: [
@@ -79,11 +78,6 @@ export default new Vuex.Store({
     }
   },
   mutations: {
-    addWork(state, payload) {
-      payload.id = state.nextId
-      state.works.push(payload)
-      state.nextId++
-    },
     setLoggedIn(state, value) {
       state.userStatus.loggedIn = value;
     },

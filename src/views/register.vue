@@ -61,10 +61,10 @@ export default {
           //成功したらemailとpasswordを空に
           data.email = '';
           data.password = '';
+          //成功したらホームにリダイレクト
           this.$router.push('/');
         })
         .catch(() => {});
-        //成功したらホームにリダイレクト
     }
   }
 };

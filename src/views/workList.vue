@@ -7,9 +7,9 @@
             <v-img width='180' height='150'>画像入れる</v-img>
             <v-card-title>{{ work.title }}</v-card-title>
             <v-divider/>
-            <v-card-subtitle>朝ごはん</v-card-subtitle>
+            <v-card-subtitle>{{ work.theme }}</v-card-subtitle>
             <v-divider/>
-            <v-card-text>あああああああああああああああああああああああああ</v-card-text>
+            <v-card-text>{{ work.description }}</v-card-text>
             <v-divider/>
             <v-card-text>Like:200  View:200</v-card-text>
             <v-divider/>
@@ -31,13 +31,20 @@
       </v-layout>
   </div>
 </template>
-
 <script>
+import { firestore } from '@/firebase/fireStore.js';
 export default {
-  computed: {
-    works() {
-      return this.$store.getters.works
-    }
+  data: () => ({
+    works: []
+  }),
+  created() {
+    firestore.collection('works').get().then((querySnapshot) => {
+      const array = [];
+      querySnapshot.forEach((doc) => {
+        array.push(doc.data())
+      });
+      this.works = array
+    });
   }
 }
 </script>
