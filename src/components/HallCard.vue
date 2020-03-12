@@ -1,6 +1,6 @@
 <template>
   <section class="card">
-    <img class="img" v-bind:src="hallImage" alt="" />
+    <img class="img" v-bind:src="hallImage" alt />
     <div class="card-content">
       <h1 class="title">{{ hallTitle }}</h1>
       <p class="name">{{ ownerName }}</p>
@@ -10,12 +10,13 @@
 
 <script>
 export default {
-  props: [
-    //各データはどう用意する？
-    "hallImage",
-    "hallTitle",
-    "ownerName"
-  ]
+  name: "hallCard",
+  props: {
+    hall: {
+      type: Object,
+      required: true
+    }
+  }
 };
 </script>
 

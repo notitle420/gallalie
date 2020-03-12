@@ -1,7 +1,6 @@
 <template>
   <div class="container">
-    <!-- v-forでカードのコンポーネントを繰り返し使う　カードはどうやって用意する？-->
-    <hall-card> </hall-card>
+    <hall-card></hall-card>
   </div>
 </template>
 
