@@ -22,29 +22,32 @@
       </v-layout>
     </v-container>
     <v-container fluid>
-      <v-layout wrap>
-        <v-text-field v-model.number='old' label='年齢' full-width clearable/>
-        <v-text-field v-model='introduce' label='自己紹介' full-width clearable class='caption'/>
-        <v-text-field v-model='concept' label='好きなコンセプト' full-width clearable/>
-        <v-text-field v-model='career' label='経歴' full-width clearable class='caption'/>
-        <v-text-field v-model='sns' label='SNS/連絡先' full-width clearable/>
-        <v-text-field v-model.number='number_of_works' label='作品数' full-width clearable/>
+      <v-layout wrap v-for='(user, i) in users' :key='i'>
+        <v-text-field v-model.number='user.age' label='年齢' :value='user.age' clearable/>
+        <v-text-field v-model='user.introduce' label='自己紹介' :value='user.introduce' clearable class='caption'/>
+        <v-text-field v-model='user.concept' label='好きなコンセプト' :value='user.concept' clearable/>
+        <v-text-field v-model='user.career' label='経歴' :value='user.career' clearable class='caption'/>
+        <v-text-field v-model='user.sns' label='SNS/連絡先' :value='user.sns' clearable/>
+        <v-text-field v-model.number='user.number_of_works' label='作品数' :value='user.number_of_works' clearable/>
       </v-layout>
     </v-container>
   </div>
 </template>
 <script>
+import { firestore } from '@/firebase/fireStore.js';
 export default {
   name: 'myPageEdit',
-  data() {
-    return {
-      old: 20,
-      introduce: '京都に住んでいます,油絵が得意です。',
-      concept: '炭の感じにこだわりました',
-      career: '二年間の浪人生活を経て、東京芸術大学に入学し、先日卒業しました。',
-      sns: '@oceans/000-0000-0000',
-      number_of_works: 29
-    }
+  data:() => ({
+    users: [],
+  }),
+  created() {
+    firestore.collection('users').get().then((querySnapshot) => {
+      const array = [];
+      querySnapshot.forEach((doc) => {
+        array.push(doc.data())
+      })
+      this.users = array
+    });
   }
 }
 </script>

@@ -9,7 +9,7 @@
             </v-toolbar-title>
             <v-spacer></v-spacer>
               <v-btn to='/' x-small>Home</v-btn>
-              <v-menu open-on-hover bottom offset-y>
+              <v-menu open-on-hover bottom offset-y :close-on-click='closeOnClick' v-model='value'>
                 <template v-slot:activator='{ on }'>
                   <v-btn x-small v-on='on'>Search▼</v-btn>
                 </template>
@@ -40,7 +40,17 @@ export default {
       { title: 'Art', url: '' },
       { title: 'Artist', url: 'artist-card-list' },
       { title: 'Place' }
-    ]
-  })
+    ],
+    value: false,
+    closeOnClick: true
+  }),
+  watch: {
+    //ページ遷移が起こったらsearchの開いていたのを強制的に閉じさせる
+    '$route': function(to, from) {
+      if(to.path !== from.path) {
+        this.value = false
+      }
+    }
+  }
 };
 </script>
