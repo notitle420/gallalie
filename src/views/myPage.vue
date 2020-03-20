@@ -25,7 +25,7 @@
       </v-layout>
     </v-container>
     <v-container fluid>
-      <v-layout wrap v-for='(user, i) in users' :key='i'>
+      <v-layout wrap>
         <v-text-field filled readonly label='年齢' :value='user.age'/>
         <v-text-field filled readonly label='自己紹介' :value='user.introduce'/>
         <v-text-field filled readonly label='好きなコンセプト' :value='user.concept'/>
@@ -60,17 +60,25 @@ import { firestore } from '@/firebase/fireStore.js';
 export default {
   name: 'myPage',
   data: () => ({
-    users: [],
+    user: {
+      age: 0,
+      introduce: '',
+      concept: '',
+      career: '',
+      sns: '',
+      number_of_works: 0
+    },
     works: []
   }),
   created() {
-    firestore.collection('users').get().then((querySnapshot) => {
-      const array = [];
-      querySnapshot.forEach((doc) => {
-        array.push(doc.data())
-      })
-      this.users = array
-    });
+    firestore.collection('users').doc('SfbGtP2sDDVaR9zUACM1').get().then((doc) => {
+      this.user.age = doc.data().age
+      this.user.introduce = doc.data().introduce
+      this.user.concept = doc.data().concept
+      this.user.career = doc.data().career
+      this.user.sns = doc.data().sns
+      this.user.number_of_works = doc.data().number_of_works
+    })
     firestore.collection('works').get().then((querySnapshot) => {
       const array = [];
       querySnapshot.forEach((doc) => {

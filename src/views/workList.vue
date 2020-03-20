@@ -27,7 +27,7 @@
       </v-layout>
     </v-container>
       <v-layout justify-center class='mt-10'>
-        <v-btn to='/work-add' x-large color='white'>Add</v-btn>
+        <v-btn to='/work-add' x-large color='white'>作品を追加</v-btn>
       </v-layout>
   </div>
 </template>

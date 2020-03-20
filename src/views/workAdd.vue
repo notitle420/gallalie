@@ -3,7 +3,7 @@
     <v-container>
       <!-- 画像のアップロード部分をコンポーネントにして分離 -->
       <uploadImage/>
-      <v-form ref="submit" @submit.prevent='addWork'>
+      <v-form ref='submit' @submit.prevent='addWork'>
         <v-layout justify-center wrap class='mt-12'>
           <v-text-field v-model="title" full-width placeholder='タイトル' :rules='titleRules' required></v-text-field>
           <v-text-field v-model="theme" full-width placeholder='テーマ' :rules='themeRules' required></v-text-field>
