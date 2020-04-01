@@ -1,43 +1,43 @@
 <template>
-  <div class="avator">
+  <div class='avator'>
     <v-btn
-      @click.native="selectFile"
-      v-if="!uploadEnd && uploading">
+      @click.native='selectFile'
+      v-if='!uploadEnd && uploading'>
     </v-btn>
-    <template v-if="!uploadEnd">
-      <v-img src="../../public/images/camera.svg" @click.native="selectFile"/>
-      <form ref="form">
+    <template v-if='!uploadEnd'>
+      <v-img src='../../public/images/camera.svg' @click.native='selectFile'/>
+      <form ref='form'>
         <input
-          type="file"
-          id="files"
-          name="file"
-          ref="uploadInput"
-          accept="image/*"
-          :multiple="false"
-          @change="detectFiles($event)"/>
+          type='file'
+          id='files'
+          name='file'
+          ref='uploadInput'
+          accept='image/*'
+          :multiple='false'
+          @change='detectFiles($event)'/>
       </form>
     </template>
     <v-progress-circular
-      v-if="uploading && !uploadEnd"
-      :size="100"
-      :width="15"
-      :rotate="360"
-      :value="progressUpload"
-      color="primary">
+      v-if='uploading && !uploadEnd'
+      :size='100'
+      :width='15'
+      :rotate='360'
+      :value='progressUpload'
+      color='primary'>
       %
     </v-progress-circular>
     <v-img
-      v-if="uploadEnd"
-      :src="downloadURL"
-      width="100%"
+      v-if='uploadEnd'
+      :src='downloadURL'
+      width='100%'
     />
-    <div v-if="uploadEnd">
+    <div v-if='uploadEnd'>
       <v-btn
-        class="ma-0"
+        class='ma-0'
         dark
         small
-        color="error"
-        @click="deleteImage()"
+        color='error'
+        @click='deleteImage()'
       >
         Delete
       </v-btn>
@@ -45,7 +45,7 @@
   </div>
 </template>
 <script>
-import { firestorage } from '../firebase/fireStorage.js'
+import { firestorage } from '@/firebase/fireStorage.js'
 export default {
   name: 'uploadImage',
   data () {

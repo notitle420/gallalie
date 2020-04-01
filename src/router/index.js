@@ -8,6 +8,7 @@ import myPage from '@/views/myPage.vue';
 import myPageEdit from '@/views/myPageEdit.vue';
 import artistShow from '@/views/artistShow.vue';
 import artistCardList from '@/views/artistCardList.vue';
+import register from '@/views/register.vue';
 
 Vue.use(VueRouter)
 
@@ -27,6 +28,10 @@ const routes = [
   {
     path: '/login',
     component: login
+  },
+  {
+    path: '/register',
+    component: register
   },
   {
     path: '/my-page',

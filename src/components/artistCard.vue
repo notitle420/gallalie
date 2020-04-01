@@ -1,15 +1,15 @@
 <template>
   <v-container>
     <v-layout>
-      <v-card width="400px" height="500px" class="mx-2 mb-4">
+      <v-card width='400px' height='500px' class='mx-2 mb-4'>
         <v-flex row>
-          <v-img class="ml-4" width="20px" height="100px">
+          <v-img class='ml-4' width='20px' height='100px'>
             画像入れる<br>あ<br>あ<br>あ
           </v-img>
           <v-card-title>
             <v-flex column>
               <p>{{ artist.name }}</p>
-              <p class="caption">{{ artist.major }}</p>
+              <p class='caption'>{{ artist.major }}</p>
             </v-flex>
           </v-card-title>
         </v-flex>
@@ -28,8 +28,8 @@
         <v-divider/>
         <v-card-text>
           <v-flex row>
-            <p class="ml-4">Like: {{ artist.like }}</p>
-            <p class="ml-4">Views: {{ artist.view }}</p>
+            <p class='ml-4'>Like: {{ artist.like }}</p>
+            <p class='ml-4'>Views: {{ artist.view }}</p>
           </v-flex>
         </v-card-text>
         <v-divider/>

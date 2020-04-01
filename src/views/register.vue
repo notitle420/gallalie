@@ -2,30 +2,33 @@
   <v-app>
     <div>
       <v-container>
-        <v-layout class="my-auto" justify-center>
-          <v-card text outlined width="400px" height="400px" class="mt-12">
-            <v-form>
+        <v-layout class='my-auto' justify-center>
+          <v-card text outlined width='400px' height='400px' class='mt-12'>
+            <v-form
+              ref='form'
+              @submit.prevent>
               <v-text-field
-                class="px-12"
-                type="email"
-                label="Email"
-                :rules="emailRules"
+                class='px-12'
+                type='email'
+                label='Email'
+                :rules='emailRules'
+                v-model='email'
                 required
                 outlined
               ></v-text-field>
               <v-text-field
-                class="px-12"
-                type="password"
-                label="Password"
-                :rules="passwordRules"
+                class='px-12'
+                type='password'
+                label='Password'
+                :rules='passwordRules'
                 required
                 outlined
+                v-model='password'
               ></v-text-field>
             </v-form>
             <br><br>
             <v-layout justify-center>
-              <v-btn outlined x-large>Register
-              </v-btn>
+              <v-btn outlined x-large @click='submit'>Register</v-btn>
             </v-layout>
           </v-card>
           <v-spacer></v-spacer>
@@ -35,6 +38,7 @@
   </v-app>
 </template>
 <script>
+import { firebaseauth } from '@/firebase/firebaseAuth.js'
 export default {
   data: () => ({
       email: '',
@@ -49,6 +53,19 @@ export default {
       ]
   }),
   methods: {
+    submit() {
+      firebaseauth
+        //firebaseAuth.jsでfirebase.auth()まで書いてあるのでここから
+        .createUserWithEmailAndPassword(this.email, this.password)
+        .then(data => {
+          //成功したらemailとpasswordを空に
+          data.email = '';
+          data.password = '';
+          //成功したらホームにリダイレクト
+          this.$router.push('/');
+        })
+        .catch(() => {});
+    }
   }
 };
 </script>
